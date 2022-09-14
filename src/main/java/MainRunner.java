@@ -12,7 +12,11 @@ public class MainRunner {
         NumberModel number = applicationContext.getBean("number", NumberModel.class);
         FileWriter fileWriter = applicationContext.getBean("fileWriter", FileWriter.class);
         PrintStrings printStrings = new PrintStrings(number, fileWriter);
-        printStrings.setNumber(100);
+        int x = 0;
+        if(args.length == 1) {
+            x = Integer.parseInt(args[0]);
+        }
+        printStrings.setNumber(x);
         printStrings.printStrings();
     }
 }
