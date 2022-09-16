@@ -2,6 +2,7 @@ package service;
 
 import beans.FileWriter;
 import beans.NumberModel;
+import org.apache.commons.lang3.RandomStringUtils;
 
 public class PrintStrings {
     private NumberModel number;
@@ -25,7 +26,7 @@ public class PrintStrings {
         fileWriter.open(FILE_NAME);
         for(int index = 0 ; index < number.getX(); index++)
         {
-            fileWriter.printLine("Hi I'm a demo string printed x number of times with index appended in it in order to make it unique" + index);
+            fileWriter.printLine(RandomStringUtils.random(100, true, true));
         }
         fileWriter.close();
     }
